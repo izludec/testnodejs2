@@ -3,9 +3,7 @@ var express = require('express')
 var app = express()
 
 
-app = app.get('/*',function (req, res) {
-     res.end("Wrong adress")
-})
+
   
 var app = app.get('/api/whoami/',function (req, res) {
      res.end(JSON.stringify({
@@ -15,6 +13,9 @@ var app = app.get('/api/whoami/',function (req, res) {
      }))
 })
 
+app = app.get('/*',function (req, res) {
+     res.end("Wrong adress")
+})
 
 app.listen(process.env.PORT || 8080,function(){
       console.log("Started 8080")
